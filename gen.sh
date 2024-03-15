@@ -14,7 +14,7 @@ sudo certbot certonly --manual --manual-public-ip-logging-ok \
           --manual-cleanup-hook "./cleanup-host.sh $account_name" \
           --key-type rsa \
           -d $domain \
-          --dry-run
+        #   --dry-run
 
 [ ! -d './cert' ] && mkdir cert
 
@@ -23,4 +23,4 @@ sudo openssl pkcs12 -export \
             -inkey /etc/letsencrypt/live/$domain/privkey.pem \
             -in /etc/letsencrypt/live/$domain/cert.pem
 
-az logout
+sudo az logout

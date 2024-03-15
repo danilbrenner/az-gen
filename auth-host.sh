@@ -10,7 +10,7 @@ fi
 
 echo $CERTBOT_VALIDATION > ./tmp/$CERTBOT_TOKEN
 
-az storage blob upload-batch \
+sudo az storage blob upload-batch \
     --overwrite \
     --destination '$web' \
     --source ./tmp \

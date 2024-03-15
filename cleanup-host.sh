@@ -6,7 +6,7 @@ if [ -z "$1" ]
     exit 1
 fi
 
-az storage blob delete-batch \
+sudo az storage blob delete-batch \
     --source '$web' \
     --pattern '.well-known/acme-challenge/*' \
     --account-name $1 \
