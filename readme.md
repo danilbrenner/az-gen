@@ -1,10 +1,12 @@
 # Generate certificate with azure http chalange
 
-1. `./install.sh`
-2. Set variable values in `gen.sh`
-3. `/gen.sh`
+## Build image
 
-To check:
 ```
-openssl s_client -connect <domain>:443 | grep NotAfter
+docker build -t az-gen .
+```
+
+## Run 
+```
+docker run --rm -e DOMAIN=<> -e AZURE_STORAGE_ACCOUNT=<> -e AZURE_STORAGE_KEY=<> -v <path>:/cert az-gen:latest
 ```
