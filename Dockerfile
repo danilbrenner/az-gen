@@ -21,4 +21,4 @@ COPY ./gen.sh scripts/
 
 RUN chmod +x /scripts/helper.sh /scripts/gen.sh
 
-ENTRYPOINT [ "/scripts/gen.sh" ]
+ENTRYPOINT [ "/bin/bash" ]
